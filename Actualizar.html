@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Actualizar</title>
+	<style type="text/css">
+		body
+		{
+			background-color: #FC9C00;
+		}
+		.boton input
+		{
+			width: 230px;
+			height: 50px;
+			text-align: center;
+			font-size: 2em; font-weight: bold;
+			font-family: Oswald;
+			line-height: 1.6em;
+			background-color: green;
+			border-radius: .5em;
+			cursor: pointer;
+			transition: background-color 1s;
+		}
+		.boton input:hover
+		{
+			background-color: red;
+		}
+		.linea
+		{
+			display: inline-block;
+		}
+		p
+		{
+			font-size: 2em;
+			font-weight: bold;
+			font-family: Oswald;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<center><font face="Oswald"><h1 class="titulo">Actualizar actas</h1></font>
+		</center>
+	</div>
+
+	<div class="linea">
+		<p><font face="Oswald" size="6"><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actas registrados:</i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.- Minuta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mi1" size="15" placeholder="6/2/2022" disabled style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Modificar" /></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.- Minuta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mi2" size="15" placeholder="24/2/2022" disabled style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Modificar" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select>
+  			<option selected="selected">Minuta</option>
+  			<option>4.- Minuta</option>
+  			<option>5.- Minuta</option>
+  			<option>6.- Minuta</option>
+  			<option>7.- Minuta</option>
+			</select></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.- Minuta &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="mi3" size="15" placeholder="5/2/2022" disabled style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Modificar" /></i></b></font></p>
+	</div>
+
+	<center><div name="actualizar">
+		<p><font face="Oswald" size="6"><b><i>FECHA: <input type="text" name="fecha" size="30" style="height: 30px;"></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>LUGAR: <input type="password" name="lugar" size="30" style="height: 30px;"></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>ASUNTOS A TRATAR:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><textarea name="textarea" rows="10" cols="50">Write something here</textarea></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>ACUERDOS REALIZADOS:<br><textarea name="textarea" rows="10" cols="50">Write something here</textarea></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>ASISTENTES:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br></i></b></font></p>
+		<p><font face="Oswald" size="5"><b><i><label><input type="checkbox" id="cbox1" value="first_checkbox">Dr. Gustavo Verduzco&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br></i></b></font></p>
+		<p><font face="Oswald" size="5"><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label><input type="checkbox" id="cbox2" value="second_checkbox">MCC. Víctor Hugo Hernández Hernández</label><br></i></b></font></p>
+		<p><font face="Oswald" size="5"><b><i><label><input type="checkbox" id="cbox3" value="third_checkbox">Dra. Ana Alberta Cánepa Saénz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br></i></b></font></p>
+		<p><font face="Oswald" size="5"><b><i><label><input type="checkbox" id="cbox4" value="fourth_checkbox">Dr. Carlos Román de la Cruz Dorantes</label><br></i></b></font></p>
+		<br><br>
+	</div></center>
+
+	<center><div class="boton">
+		<form action="Index.html" method="POST" class="linea">
+			<input type="submit" value="Cancelar" />
+		</form>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<form action="#" method="POST" class="linea">
+			<input type="submit" value="Modificar" />
+		</form>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<form action="#" method="POST" class="linea">
+			<input type="submit" value="Imprimir" />
+		</form>
+	</div></center>
+</body>
+</html>
