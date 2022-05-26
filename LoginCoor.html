@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login Coordinador</title>
+	<style type="text/css">
+		body
+		{
+			background-color: #FC9C00;
+		}
+		.boton input
+		{
+			width: 230px;
+			height: 50px;
+			text-align: center;
+			font-size: 2em; font-weight: bold;
+			font-family: Oswald;
+			line-height: 1.6em;
+			background-color: green;
+			border-radius: .5em;
+			cursor: pointer;
+			transition: background-color 1s;
+		}
+		.boton input:hover
+		{
+			background-color: red;
+		}
+		.linea
+		{
+			display: inline-block;
+		}
+		p
+		{
+			font-size: 2em;
+			font-weight: bold;
+			font-family: Oswald;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<center><font face="Oswald"><h1 class="titulo">Iniciar Sesión Coordinador</h1></font>
+			<img src="https://e7.pngegg.com/pngimages/352/66/png-clipart-computer-icons-login-adityaram-properties-business-business-blue-people-thumbnail.png" style="width: 230px; height: 230px;">
+		</center>
+	</div><br>
+
+	<center><form action="CoordinadorMain.html" method="POST" name="Iniciar">
+		<p><font face="Oswald" size="6"><b><i>USUARIO: <input type="text" name="usuario" size="30" style="height: 30px;"></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>CONTRASEÑA: <input type="password" name="pass" size="30" style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div></i></b></font></p>
+		<div class="boton">
+			<input type="submit" value="Acceder" />
+		</div>
+	</center></form><br><br>
+
+	<center><div class="boton">
+		<form action="IndexPrincipal.html" method="POST" class="linea">
+			<input type="submit" value="Regresar" />
+		</form>
+	</div></center>
+</body>
+</html>
