@@ -9,98 +9,85 @@
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/main.css" >
+    <link rel="stylesheet" href="../css/main.css">
 
 </head>
 
 <body>
-
+    <!-- consultamos los datos para meterlos en un objeto -->
+    <?php
+    $conexion = include_once "connect.php";
+    $resultado = $conexion->query("SELECT acta_id, profe_id, profe_nombre, profe_apellido, profe_correo, creador, estuve FROM profesores NATURAL JOIN profesores_actas WHERE acta_id=1;");
+    $profesores = $resultado->fetch_all(MYSQLI_ASSOC);
+    ?>
 
     <div class="container my-5">
-        <div class="shadow-4 rounded-5 overflow-hidden">
+        <div class="shadow-4 rounded-3 overflow-hidden">
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
-                        <th>Name</th>
-                        <th>Title</th>
+                        <th>Nombre</th>
                         <th>Status</th>
-                        <th>Position</th>
-                        <th>Actions</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1">John Doe</p>
-                                    <p class="text-muted mb-0">john.doe@gmail.com</p>
+
+
+                    <?php
+                    foreach ($profesores as $profe) { ?>
+
+                        <tr>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
+                                    <div class="ms-3">
+                                        <p class="fw-bold mb-1"> <?php echo $profe["profe_nombre"] . " " . $profe["profe_apellido"] ?> </p>
+                                        <p class="text-muted mb-0"><?php echo $profe["profe_correo"] ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="fw-bold mb-1">Software engineer</p>
-                            <p class="text-muted mb-0">IT department</p>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-primary">Primary</span>
-                        </td>
-                        <td>Senior</td>
-                        <td>
-                            <button type="button" class="btn btn-link btn-sm btn-rounded">
-                                Edit
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px" />
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1">Alex Ray</p>
-                                    <p class="text-muted mb-0">alex.ray@gmail.com</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1">Consultant</p>
-                            <p class="text-muted mb-0">Finance</p>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-primary">Primary</span>
-                        </td>
-                        <td>Junior</td>
-                        <td>
-                            <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-                                Edit
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt="" style="width: 45px; height: 45px" />
-                                <div class="ms-3">
-                                    <p class="fw-bold mb-1">Kate Hunington</p>
-                                    <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <p class="fw-normal mb-1">Designer</p>
-                            <p class="text-muted mb-0">UI/UX</p>
-                        </td>
-                        <td>
-                            <span class="badge rounded-pill bg-primary">Primary</span>
-                        </td>
-                        <td>Senior</td>
-                        <td>
-                            <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-                                Edit
-                            </button>
-                        </td>
-                    </tr>
+                            </td>
+
+                            <td>
+                                <?php
+                                if ($profe["creador"] == 1) {
+                                ?>
+                                    <span class="badge rounded-pill bg-primary">creador</span>
+                                <?php
+                                } elseif ($profe["estuve"] == 1) { ?>
+                                    <span class="badge rounded-pill bg-secondary">Asistio</span>
+                                <?php
+                                } else {
+                                ?>
+                                    <span class="badge rounded-pill bg-warning text-dark">No Asistio</span>
+                                <?php
+                                } ?>
+
+
+                            </td>
+
+                            <td>
+                            <?php
+                                if ($profe["creador"] != 1) {
+                                ?>
+                                  <button type="button" class="btn btn-outline-danger" onclick="window.location.href='crude/profesoresDeActas_eliminar.php? ida=<?php echo $profe['acta_id']?>& idp=<?php echo $profe['profe_id'] ?>'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                        <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                                    </svg>
+                                    Eliminar
+                                </button>
+                                <?php
+                                }  ?>
+                               
+                            </td>
+                            </td>
+                        </tr>
+
+
+                    <?php } ?>
+
+
+
                 </tbody>
             </table>
         </div>

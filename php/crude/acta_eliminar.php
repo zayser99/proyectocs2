@@ -7,6 +7,4 @@ $id = $_GET["id"];
 $sentencia = $mysqli->prepare("DELETE FROM actas WHERE acta_id =?");
 $sentencia->bind_param("i", $id);
 $sentencia->execute();
-
-echo $id;
-//header("Location: ../row_actas.php");
+header("Location: ../row_actas.php");
