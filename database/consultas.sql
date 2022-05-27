@@ -1,6 +1,6 @@
 
 ---profesores de un acta------------
-SELECT profe_id, profe_nombre, profe_apellido, creador, estuve FROM profesores NATURAL JOIN profesores_actas WHERE acta_id=3;
+SELECT profe_id, profe_nombre, profe_apellido, profe_correo, creador, estuve FROM profesores NATURAL JOIN profesores_actas WHERE acta_id=3;
 
 
 
