@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `asuntos` (
   PRIMARY KEY (`asunto_id`),
     FOREIGN KEY (`acta_id`)
     REFERENCES `actas` (`acta_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `acuerdos` (
   PRIMARY KEY (`acuerdo_id`),
     FOREIGN KEY (`acta_id`)
     REFERENCES `actas` (`acta_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -71,8 +71,8 @@ CREATE TABLE IF NOT EXISTS `profesores_actas` (
     ON UPDATE NO ACTION,
     FOREIGN KEY (`acta_id`)
     REFERENCES `actas` (`acta_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 

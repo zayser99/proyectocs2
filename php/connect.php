@@ -1,15 +1,14 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-</head>
-<?php
-	$mysqli= new mysqli("localhost","root","","pruebadbcs2");
-	if(mysqli_connect_errno()){
-		echo "no se pudo conectar";
-	}
+<?php 
+    $server = "localhost";  
+    $user = "root";
+    $password= "";
+    $db="pruebadbcs2";
+    $conexion = new mysqli($server, $user, $password, $db);
+    
+    if($conexion->connect_errno){
+        die("la conecion ha fallado".$conexion->connect_errno);
+    } 
+
+    return $conexion;
 ?>
-<body>
-</body>
-</html>
+    
