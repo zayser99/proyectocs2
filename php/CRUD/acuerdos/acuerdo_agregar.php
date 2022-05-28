@@ -1,5 +1,6 @@
 <?php
-$mysqli = include_once "../connect.php";
+$mysqli = include_once "../../connect.php";
+
 
 
 $detalle = $_POST["detalle"];
