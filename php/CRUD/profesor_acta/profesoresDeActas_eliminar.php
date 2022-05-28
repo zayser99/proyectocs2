@@ -12,4 +12,4 @@ $sentencia->execute();
 
 
 
-header("Location: ../row_profesores.php");
+header("Location: ../../row_profesores.php");
