@@ -11,4 +11,4 @@ $sentencia->execute();
 
 
 //susutituir por locaicon de la tabla
-// header("Location: ../row_actas.php");
+header("Location: ../../row_acuerdos.php");

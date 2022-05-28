@@ -67,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `profesores_actas` (
   PRIMARY KEY (`profe_id`, `acta_id`),
     FOREIGN KEY (`profe_id`)
     REFERENCES `profesores` (`profe_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
     FOREIGN KEY (`acta_id`)
     REFERENCES `actas` (`acta_id`)
     ON DELETE CASCADE

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>row de profesores</title>
+    <title>row de asuntos</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,8 +17,8 @@
     <!-- consultamos los datos para meterlos en un objeto -->
     <?php
     $conexion = include_once "connect.php";
-    $resultado = $conexion->query("SELECT * FROM profesores");
-    $profesores = $resultado->fetch_all(MYSQLI_ASSOC);
+    $resultado = $conexion->query("SELECT asunto_id, asunto_detalle FROM asuntos WHERE acta_id=4 ;");
+    $asuntos = $resultado->fetch_all(MYSQLI_ASSOC);
     ?>
 
     <div class="container my-5">
@@ -26,9 +26,7 @@
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">
                     <tr>
-                        <th>Nombre</th>
-                        <th>Numero</th>
-                        <th>Usuario</th>
+                        <th>Detalles</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -36,26 +34,14 @@
 
 
                     <?php
-                    foreach ($profesores as $profe) { ?>
+                    foreach ($asuntos as $asunto) { ?>
 
                         <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle" />
-                                    <div class="ms-3">
-                                        <p class="fw-bold mb-1"> <?php echo $profe["profe_nombre"] . " " . $profe["profe_apellido"] ?> </p>
-                                        <p class="text-muted mb-0"><?php echo $profe["profe_correo"] ?></p>
-                                    </div>
-                                </div>
-                            </td>
 
                             <td>
-                                <p class="text-muted mb-0"><?php echo $profe["profe_numero"] ?></p>
+                                <p class="text-muted mb-0"><?php echo $asunto["asunto_detalle"] ?></p>
                             </td>
 
-                            <td>
-                                <p class="text-muted mb-0"><?php echo $profe["profe_usuario"] ?></p>
-                            </td>
 
                             <td>
                             <button type="button" class="btn btn-primary">
@@ -66,7 +52,7 @@
                                     Editar
                                 </button>
                                 
-                                <button type="button" class="btn btn-outline-danger" onclick="window.location.href='CRUD/profesores/profesor_eliminar.php? id=<?php echo $profe['profe_id'] ?>'">
+                                <button type="button" class="btn btn-outline-danger" onclick="window.location.href='CRUD/asuntos/asunto_eliminar.php? id=<?php echo $asunto['asunto_id'] ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
                                         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
                                     </svg>
