@@ -2,11 +2,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Login Administrador</title>
+	<title>Login Profesor</title>
 	<style type="text/css">
 		body
 		{
-			background-color: #FC9C00;
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 		.boton input
 		{
@@ -38,24 +38,26 @@
 	</style>
 </head>
 <body>
+	
 	<div>
-		<center><font face="Oswald"><h1 class="titulo">Iniciar Sesión Administrador</h1></font>
-			<img src="https://e7.pngegg.com/pngimages/352/66/png-clipart-computer-icons-login-adityaram-properties-business-business-blue-people-thumbnail.png" style="width: 230px; height: 230px;">
+		<center><font face="Oswald"><h1 class="titulo">LOGIN PROFESOR</h1></font>
+			<img src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" style="width: 230px; height: 230px;">
 		</center>
 	</div><br>
 
-	<center><form action="Index.html" method="POST" name="Iniciar">
-		<p><font face="Oswald" size="6"><b><i>USUARIO: <input type="text" name="usuario" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>CONTRASEÑA: <input type="password" name="pass" size="30" style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div></i></b></font></p>
+	<center><form action="p_login.php" method="POST" name="Iniciar">
+		<p><font face="Oswald" size="6"><b><i>USUARIO: <input type="text" name="user" size="30" style="height: 30px;"></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>CONTRASEÑA: <input type="password" name="password" size="30" style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div></i></b></font></p>
 		<div class="boton">
-			<input type="submit" value="Acceder" />
+			<input type="submit" name="ingresar" value="Acceder" />
 		</div>
 	</center></form><br><br>
 
 	<center><div class="boton">
 		<form action="IndexPrincipal.html" method="POST" class="linea">
-			<input type="submit" value="Regresar" />
+			<input type="submit"  value="Regresar" />
 		</form>
 	</div></center>
+	
 </body>
 </html>
