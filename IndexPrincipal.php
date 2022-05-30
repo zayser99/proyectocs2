@@ -13,7 +13,7 @@
 
 	<style type="text/css">
 		body {
-			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
+			background-image: url(https://www.evirtualplus.com/wp-content/uploads/2016/09/gestores-de-referencias-bibliograficas-dominando-tus-anotaciones.png.webp);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 
 		.boton input {
