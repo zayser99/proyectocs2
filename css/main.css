@@ -1,3 +1,24 @@
 body {
     background-color: hsl(0, 0%, 94%)
   }
+.boton input
+		{
+			width: 230px;
+			height: 50px;
+			text-align: center;
+			font-size: 2em; font-weight: bold;
+			font-family: Oswald;
+			line-height: 1.6em;
+			background-color: green;
+			border-radius: .5em;
+			cursor: pointer;
+			transition: background-color 1s;
+		}
+		.boton input:hover
+		{
+			background-color: red;
+		}
+		.linea
+		{
+			display: inline-block;
+		}

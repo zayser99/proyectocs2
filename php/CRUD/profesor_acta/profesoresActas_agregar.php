@@ -2,13 +2,11 @@
 $mysqli = include_once "../../connect.php";
 
 
-$idActa = $_POST["idActa"];
+$idActa = $_GET["idActa"];
+$fecha = $_GET["fecha"];
 $idProfe = $_POST["idProfe"];
-$creador = $_POST["creador"];
-$estuve = $_POST["estuve"];
-
-
-
+$creador = 0;
+$estuve = 0;
 
 
 $sentencia = $mysqli->prepare("INSERT INTO profesores_actas
@@ -19,4 +17,4 @@ $sentencia->bind_param("iiii", $idProfe, $idActa, $creador, $estuve);
 $sentencia->execute();
 
 //sustituir por locacion del formulario
-//header("Location: listar.php");
+header("Location: ../../../Agregar.php? id=".$idActa ."& fecha=".$fecha);
