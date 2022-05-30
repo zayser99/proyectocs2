@@ -17,9 +17,9 @@ try{
 	if(($nrows == 1)){
 		#echo ($nombre);
 		$_SESSION['user'] = $nombre;
-		header("location: Index.html");
+		header("location: Index.php");
 		}else{
-		echo "<script> alert('Datos incorrectos');window.location.href='LoginAd.html';</script>";
+		echo "<script> alert('Datos incorrectos');window.location.href='LoginAd.php';</script>";
 		#header("location: inicio.php");
 		}
 

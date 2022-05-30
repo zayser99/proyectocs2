@@ -145,7 +145,7 @@ echo ($usuario);
 	<br><br><br>
 	<center>
 		<div class="boton">
-			<form action="IndexPrincipal.html" method="POST" class="linea">
+			<form action="salir.php" method="POST" class="linea">
 				<input type="submit" value="Cerrar Sesión" />
 			</form>
 		</div>

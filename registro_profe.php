@@ -38,7 +38,19 @@
 	</style>
 </head>
 <body>
-	
+<?php
+error_reporting(0);
+session_start();
+
+$usuario = $_SESSION['user'];
+
+if(!isset($usuario)){
+#header( "refresh:1;url=".$_SERVER['PHP_SELF'] );
+}else{
+echo ($usuario);
+header("location: Index.php");
+}
+?>	
 	<div>
 		<center><font face="Oswald"><h1 class="titulo">REGISTRO PROFESOR</h1></font>
 			<img src="https://cdn.icon-icons.com/icons2/2104/PNG/512/manager_icon_129392.png" style="width: 230px; height: 230px;">
@@ -59,7 +71,7 @@
 	</center><br><br>
 
 	<center><div class="boton">
-		<form action="IndexPrincipal.html" method="POST" class="linea">
+		<form action="IndexPrincipal.php" method="POST" class="linea">
 			<input type="submit"  value="Regresar" />
 		
 	</div></center>
