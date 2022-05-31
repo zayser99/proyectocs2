@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `profesores` (
   `profe_numero` CHAR(10) NULL,
   `profe_correo` VARCHAR(255) NULL,
   `profe_usuario` VARCHAR(255) NULL,
-  `profe_password` VARCHAR(255) NULL,
+  `profe_password` tinytext NULL,
   PRIMARY KEY (`profe_id`))
 ENGINE = InnoDB;
 

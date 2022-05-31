@@ -2,7 +2,7 @@
     $server = "localhost";  
     $user = "root";
     $password= "";
-    $db="pruebadbcs2";
+    $db="minutas";
     $conexion = new mysqli($server, $user, $password, $db);
     
     if($conexion->connect_errno){

@@ -10,14 +10,14 @@
 	<style type="text/css">
 		body
 		{
-			background-color: #FC9C00;
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 		.boton input
 		{
 			width: 230px;
 			height: 50px;
 			text-align: center;
-			font-size: 2em; font-weight: bold;
+			font-size: x-large; font-weight: bold;
 			font-family: Oswald;
 			line-height: 1.6em;
 			background-color: green;
@@ -38,6 +38,7 @@
 			font-size: 2em;
 			font-weight: bold;
 			font-family: Oswald;
+			
 		}
 	</style>
 </head>
@@ -55,13 +56,17 @@
  		$lugar=$acta["acta_lugar"];
  	}
  	?>
+	 <center>
 	<p><form action="php/CRUD/actas/acta_editar.php? id=<?php echo $id;?>" method="POST" class="linea">
 		<font face="Oswald" size="6"><b><i>TITULO:<br>
-			<input type="text" name="titulo" value="<?php echo $titulo;?>"></input><br>
+			<input type="text" name="titulo" value="<?php echo $titulo;?>" required></input><br>
 
 			<font face="Oswald" size="6"><b><i>LUGAR:<br>
-			<input type="text" name="lugar" value="<?php echo $lugar;?>"></input><br><br>
-		<input type="submit" value="==>" /><br>
+			<input type="text" name="lugar" value="<?php echo $lugar;?>" required></input><br><br>
+			<div class="boton">
+			<input  type="submit" value="Siguiente" />
+			</div><br>
 	</form></i></b></font></p>
+	 </center>
 </body>
 </html>

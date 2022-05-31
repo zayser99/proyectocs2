@@ -1,7 +1,8 @@
 <?php
 $mysqli = include_once "../../connect.php";
 
-
+session_start();
+$username = $_SESSION['user'];
 $lugar = '';
 $titulo = '';
 
@@ -27,8 +28,13 @@ $sentencia->execute();
  	$fecha= $acta["acta_fecha"];
  }
 
-$idProfe=4;
+ $resultado3 = $mysqli->query("SELECT * FROM profesores WHERE profe_usuario = '".$username."'");
 
+ $profes3 = $resultado3->fetch_all(MYSQLI_ASSOC);
+
+ foreach($profes3 as $profe){
+ 	$idProfe= $profe["profe_id"];
+ }
 
 $sentencia2 = $mysqli->prepare("INSERT INTO profesores_actas
 (profe_id, acta_id, creador, estuve)

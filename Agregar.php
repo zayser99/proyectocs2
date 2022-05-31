@@ -10,14 +10,14 @@
 	<style type="text/css">
 		body
 		{
-			background-color: #FC9C00;
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 		.boton input
 		{
-			width: 230px;
+			width: 100px;
 			height: 50px;
 			text-align: center;
-			font-size: 2em; font-weight: bold;
+			font-size: x-large; font-weight: bold;
 			font-family: Oswald;
 			line-height: 1.6em;
 			background-color: green;
@@ -56,7 +56,8 @@
 		<p class="fw-bold mb-1"> <?php echo $fecha?></p>
 		<p><font face="Oswald" size="6"><b><i>ASUNTOS A TRATAR:<br>
 		<form action="php/CRUD/asuntos/asunto_agregar.php? idActa=<?php echo $id ?> & fecha=<?php echo $fecha ?>" method="POST" class="linea">
-			<input type="submit" value="+" /><br>
+        <div class="boton">
+        <input type="submit" value="+" /></div>
 			<textarea name="detalle" rows="10" cols="50"></textarea>
 		</form></i></b></font></p>
 
@@ -91,13 +92,7 @@
 
 
                             <td>
-                            <button type="button" class="btn btn-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                    </svg>
-                                    Editar
-                                </button>
+                            
                                 
                                 <button type="button" class="btn btn-outline-danger" onclick="window.location.href='CRUD/asuntos/asunto_eliminar.php? id=<?php echo $asunto['asunto_id'] ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -124,7 +119,7 @@
 
     	<p><font face="Oswald" size="6"><b><i>ACUERDOS REALIZADOS:<br>
 		<form action="php/CRUD/acuerdos/acuerdo_agregar.php? idActa=<?php echo $id ?> & fecha=<?php echo $fecha ?>" method="POST" class="linea">
-			<input type="submit" value="+" /><br>
+        <div class="boton"><input type="submit" value="+" /></div>
 			<textarea name="detalle" rows="10" cols="50"></textarea>
 		</form></i></b></font></p>
 
@@ -158,13 +153,7 @@
 
 
                             <td>
-                            <button type="button" class="btn btn-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
-                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
-                                    </svg>
-                                    Editar
-                                </button>
+                          
                                 
                                 <button type="button" class="btn btn-outline-danger" onclick="window.location.href='CRUD/acuerdos/acuerdo_eliminar.php? id=<?php echo $acuerdo['acuerdo_id'] ?>'">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
@@ -212,7 +201,8 @@
 
   				<?php } ?>
 		</select>
-			<input type="submit" value="+" />
+        
+			<input type="submit" value="+" style="background-color: green;"/>
 		</form>
 
     <div class="container my-5">
@@ -321,6 +311,7 @@
 			<input type="submit" value="Listo" />
 		</form>
 	</div></center>
+    <br>
 
 
 
