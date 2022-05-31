@@ -103,7 +103,7 @@ echo ($usuario);
 
 	<center>
 		<div class="linea">
-			<img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1503/sarahdesign150300689/37544577-bot%C3%B3n-de-la-cruz-icono-agregar.jpg"
+			<img src="https://terapiaocupacionaluct.files.wordpress.com/2015/10/acta.png?w=480"
 				style="width: 230px; height: 230px;">
 
 	</center>
