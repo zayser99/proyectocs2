@@ -58,12 +58,12 @@ header("location: Index.php");
 	</div><br>
 
 	<center><form action="p_registro.php" method="POST" name="registro">
-		<p><font face="Oswald" size="6"><b><i>Nombre: <input type="text" name="name" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>Apellido: <input type="text" name="ape" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>Numero: <input type="text" name="telr" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>Correo: <input type="text" name="correo" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>Usuario: <input type="text" name="user" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>Contraseña: <input type="password" name="password" size="30" style="height: 30px;"></i></b></font></p>		
+		<p><font face="Oswald" size="6"><b><i>Nombre: <input type="text" name="name" size="30" style="height: 30px;" onkeypress="return sololetra(event);" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>Apellido: <input type="text" name="ape" size="30" style="height: 30px;" onkeypress="return sololetra(event);" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>Numero: <input type="text" name="telr"  size="30" style="height: 30px;"  onkeypress="return solonumero(event);" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>Correo: <input type="text" name="correo" size="30" style="height: 30px;" onblur="pruebaemail(correo.value);" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>Usuario: <input type="text" name="user" size="30" style="height: 30px;" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>Contraseña: <input type="password" name="password" size="30" style="height: 30px;" required></i></b></font></p>		
 		<div class="boton">
 			<input type="submit" name="ingresar" value="Registrar" />
 		</div>
@@ -75,6 +75,94 @@ header("location: Index.php");
 			<input type="submit"  value="Regresar" />
 		
 	</div></center>
+	<script type="text/javascript">
 	
+	function solonumero(evt){   
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // para borrar
+      return true;
+    } else if(code>=48 && code<=57) { // condicion de solo numeros
+      return true;
+    } else{ // que no lo haga
+    alert("Tiene que escribir su telefono con solo numeros")
+      return false;
+    }
+}
+
+
+	function sololetra(evt){   
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // para borrar
+      return true;
+    } else if(code>=97 && code<=122) { // condicion de solo letra minuscula
+      return true;
+    } else if (code>=65 && code<=90) { // condicion de solo letra mayuscula
+      return true;
+    }else if (code==32) { // condicion de espacio
+      return true;
+    }else{ // que no lo haga
+    alert("Tiene que escribir solo con letras")
+      return false;
+    }
+}
+
+	
+	function noespecial(evt){   
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // para borrar
+      return true;
+    } else if(code>=48 && code<=57) { // condicion de solo numeros
+      return true;
+    } else if(code>=97 && code<=122) { // condicion de solo letra minuscula
+      return true;
+    } else if (code>=65 && code<=90) { // condicion de solo letra mayuscula
+      return true;
+    }else if (code==32) { // condicion de espacio
+      return true;
+    }else{ // que no lo haga
+    alert("Solo escribe con letras y numeros")
+      return false;
+    }
+}
+
+	
+	function solonumerotel(evt){   
+    var code = (evt.which) ? evt.which : evt.keyCode;
+    
+    if(code==8) { // para borrar
+      return true;
+    } else if(code>=48 && code<=57) { // condicion de solo numeros
+      return true;
+    } else{ // que no lo haga
+    alert("Tiene que escribir su numero con solo numeros")
+      return false;
+    }
+}
+
+	
+	function diez(){   
+		if (document.fvalida.tel.value.length<10 || document.fvalida.tel.value.length>10){
+      		alert("Tiene que escribir su telefono a 10 digitos")
+      		document.fvalida.tel.focus()
+      		return 0;
+   	}
+
+   	//el formulario se envia
+   	alert("Formulario enviado");
+   	document.fvalida.submit();
+    
+}
+
+function pruebaemail (valor){
+	re=/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
+	if(!re.exec(valor)){
+		alert('email no valido');
+	}
+	else return true;
+	}
+</script>	
 </body>
 </html>

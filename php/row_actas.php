@@ -9,15 +9,65 @@
 
     <!-- Bootstrap CSS v5.0.2 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style type="text/css">
+		body {
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
+		}
 
+	</style>
 </head>
 
 <body>
+    <!-- navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="opacity: 0.9;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php
+                            session_start();
+                            error_reporting(0);
+                            $usuario = $_SESSION['user'];
+
+                            if (!isset($usuario)) {
+                                header("location: IndexPrincipal.php");
+                            } else {
+                                echo ($usuario);
+                            }
+                            ?>
+
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <div class="boton2">
+                        <button class="btn btn-success" type="button" onclick="window.location.href='../Index.php'">Regresar</button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
     <br>
     <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-success" type="button" onclick="window.location.href='CRUD/actas/acta_agregar.php'">Nueva Acta</button>
     </div>
-    <button class="btn btn-success" type="button" onclick="window.location.href='../Index.php'">Regresar</button>
+
     <!-- consultamos los datos para meterlos en un objeto -->
     <?php
     $conexion = include_once "connect.php";
@@ -25,7 +75,7 @@
     $actas = $resultado->fetch_all(MYSQLI_ASSOC);
     ?>
 
-    <div class="container my-5">
+    <div class="container my-5" style="opacity: 0.9;">
         <div class="shadow-4 rounded-5 overflow-hidden">
             <table class="table align-middle mb-0 bg-white">
                 <thead class="bg-light">

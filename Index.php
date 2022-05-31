@@ -13,7 +13,7 @@
 
 	<style type="text/css">
 		body {
-			background-color: #ceecee;
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 
 		.boton input {
@@ -29,7 +29,22 @@
 			cursor: pointer;
 			transition: background-color 1s;
 		}
-
+		.boton2 input {
+			width: 115px;
+			height: 25px;
+			text-align: center;
+			font-size: small;
+			font-weight: bold;
+			font-family: Oswald;
+			line-height: 1.6em;
+			background-color: #ceecee;
+			border-radius: .5em;
+			cursor: pointer;
+			transition: background-color 1s;
+		}
+		.boton2 input:hover {
+			background-color: red;
+		}
 		.boton input:hover {
 			background-color: red;
 		}
@@ -50,7 +65,7 @@
 
 	<!-- navbar -->
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="opacity: 0.9 ;">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"> <img src="assets/images/cti.png" alt="" width="30" height="24"
 					class="d-inline-block align-text-top"></a>
@@ -76,20 +91,21 @@ echo ($usuario);
 
 }
 ?>
-							<span
-								class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-								10
-								<span class="visually-hidden">unread messages</span>
-							</span>
+
 						</a>
-						<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-							<li><a class="dropdown-item" href="#">Mi perfil</a></li>
-							<li><a class="dropdown-item" href="#">Mis Actas pendientes</a></li>
-							<li><a class="dropdown-item" href="#">Actas por Autorizar</a></li>
-						</ul>
+
 					</li>
 				</ul>
 			</div>
+			<ul class="nav navbar-nav navbar-right">
+
+				<li><div class="boton2">
+			<form action="salir.php" method="POST" class="linea">
+				<input type="submit" value="Cerrar Sesión" />
+			</form>
+		</div></li>
+
+			  </ul>
 		</div>
 	</nav>
 	<center>
@@ -97,7 +113,7 @@ echo ($usuario);
 			<h1 class="titulo">Bienvenido al Gestor de Minutas Académicas</h1>
 		</font>
 		<img src="http://www.unacar.mx/unacar/imagenes/imagenes_varias/collage_unacar.png"
-			style="width: 1300px; height: 500px;">
+			style="width: 1300px; height: 500px; opacity: 0.9;">
 	</center>
 	</div><br>
 
@@ -123,13 +139,7 @@ echo ($usuario);
 		</div>
 	</center>
 	<br><br><br>
-	<center>
-		<div class="boton">
-			<form action="salir.php" method="POST" class="linea">
-				<input type="submit" value="Cerrar Sesión" />
-			</form>
-		</div>
-	</center>
+
 </body>
 
 </html>

@@ -46,8 +46,8 @@
 	</div><br>
 
 	<center><form action="p_login.php" method="POST" name="Iniciar">
-		<p><font face="Oswald" size="6"><b><i>USUARIO: <input type="text" name="user" size="30" style="height: 30px;"></i></b></font></p>
-		<p><font face="Oswald" size="6"><b><i>CONTRASEÑA: <input type="password" name="password" size="30" style="height: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>USUARIO: <input type="text" name="user" size="30" style="height: 30px;" required></i></b></font></p>
+		<p><font face="Oswald" size="6"><b><i>CONTRASEÑA: <input type="password" name="password" size="30" style="height: 30px;" required>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="alert"><?php echo isset($alert) ? $alert : ''; ?></div></i></b></font></p>
 		<div class="boton">
 			<input type="submit" name="ingresar" value="Acceder" />
 		</div>

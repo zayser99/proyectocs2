@@ -10,14 +10,14 @@
 	<style type="text/css">
 		body
 		{
-			background-color: #FC9C00;
+			background-image: url(https://s1.1zoom.me/b5149/175/School_White_background_Pencils_Multicolor_568201_1600x1200.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;
 		}
 		.boton input
 		{
-			width: 230px;
+			width: 100px;
 			height: 50px;
 			text-align: center;
-			font-size: 2em; font-weight: bold;
+			font-size: x-large; font-weight: bold;
 			font-family: Oswald;
 			line-height: 1.6em;
 			background-color: green;
@@ -56,7 +56,8 @@
 		<p class="fw-bold mb-1"> <?php echo $fecha?></p>
 		<p><font face="Oswald" size="6"><b><i>ASUNTOS A TRATAR:<br>
 		<form action="php/CRUD/asuntos/asunto_agregar.php? idActa=<?php echo $id ?> & fecha=<?php echo $fecha ?>" method="POST" class="linea">
-			<input type="submit" value="+" /><br>
+        <div class="boton">
+        <input type="submit" value="+" /></div>
 			<textarea name="detalle" rows="10" cols="50"></textarea>
 		</form></i></b></font></p>
 
@@ -118,7 +119,7 @@
 
     	<p><font face="Oswald" size="6"><b><i>ACUERDOS REALIZADOS:<br>
 		<form action="php/CRUD/acuerdos/acuerdo_agregar.php? idActa=<?php echo $id ?> & fecha=<?php echo $fecha ?>" method="POST" class="linea">
-			<input type="submit" value="+" /><br>
+        <div class="boton"><input type="submit" value="+" /></div>
 			<textarea name="detalle" rows="10" cols="50"></textarea>
 		</form></i></b></font></p>
 
@@ -200,7 +201,8 @@
 
   				<?php } ?>
 		</select>
-			<input type="submit" value="+" />
+        
+			<input type="submit" value="+" style="background-color: green;"/>
 		</form>
 
     <div class="container my-5">
@@ -309,6 +311,7 @@
 			<input type="submit" value="Listo" />
 		</form>
 	</div></center>
+    <br>
 
 
 
