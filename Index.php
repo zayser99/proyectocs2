@@ -104,42 +104,22 @@ echo ($usuario);
 	<center>
 		<div class="linea">
 			<img src="https://previews.123rf.com/images/sarahdesign/sarahdesign1503/sarahdesign150300689/37544577-bot%C3%B3n-de-la-cruz-icono-agregar.jpg"
-				style="width: 230px; height: 230px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<img src="https://previews.123rf.com/images/faysalfarhan/faysalfarhan1502/faysalfarhan150200917/36476028-icono-actualizar-bot%C3%B3n-azul-vidrioso.jpg"
-				style="width: 230px; height: 230px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<img src="https://w7.pngwing.com/pngs/283/970/png-transparent-organization-pinax-myndighed-communication-logo-consult-text-rectangle-logo-thumbnail.png"
-				style="width: 230px; height: 230px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<img src="https://ayudawp.com/wp-content/uploads/2018/04/borrar-plugins-wordpress.png"
 				style="width: 230px; height: 230px;">
+
 	</center>
 
 	<center>
 		<div class="linea">
-			<p><i>&nbsp;&nbsp;Agregar
-					acta&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Actualizar
-					actas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consultar
-					actas&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Borrar
-					actas&nbsp;&nbsp;&nbsp;</i></p>
+			<p><i>Actas</i></p>
 		</div>
 	</center>
 
 	<center>
 		<div class="boton">
-			<form action="Agregar.html" method="POST" class="linea">
+			<form action="php/row_actas.php" method="POST" class="linea">
 				<input type="submit" value="Acceder" />
 			</form>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<form action="Actualizar.html" method="POST" class="linea">
-				<input type="submit" value="Acceder" />
-			</form>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<form action="Consultar.html" method="POST" class="linea">
-				<input type="submit" value="Acceder" />
-			</form>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<form action="Borrar.html" method="POST" class="linea">
-				<input type="submit" value="Acceder" />
-			</form>
+
 		</div>
 	</center>
 	<br><br><br>

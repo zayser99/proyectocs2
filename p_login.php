@@ -8,10 +8,10 @@ $pass = hash('sha512',$pass);
 try{
 	$querylog = mysqli_query($mysqli,"SELECT * FROM profesores WHERE profe_usuario = '$user' AND profe_password = '$pass'");
 	
-	$resultados = mysqli_query($mysqli,"SELECT profe_nombre FROM profesores WHERE profe_usuario LIKE '$user'");
+	$resultados = mysqli_query($mysqli,"SELECT profe_usuario FROM profesores WHERE profe_usuario LIKE '$user'");
 	while($consulta = mysqli_fetch_array($resultados))
 {
-    $nombre=$consulta['profe_nombre'];
+    $nombre=$consulta['profe_usuario'];
 }
 	$nrows = mysqli_num_rows($querylog);
 	if(($nrows == 1)){
